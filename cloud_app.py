@@ -53,6 +53,16 @@ st.subheader("📁 Upload a pdf, docx or text file to generate a word cloud")
 uploaded_file = st.file_uploader("Choose a file", type=["txt", "pdf", "docx"])
 #st.set_option('deprecation.showPyplotGlobalUse', False)
 
+# add author name and info
+st.markdown("---")
+st.markdown("Created by: [Muhammad Zain Vazir](https://www.linkedin.com/in/muhammad-zain-vazir)")
+st.markdown("GitHub![GitHub](https://img.icons8.com/ios-glyphs/30/000000/github.png)[m-zainvazir](https://github.com/m-zainvazir)")
+st.markdown("LinkedIn![LinkedIn](https://img.icons8.com/ios-glyphs/30/000000/linkedin.png)[muhammad-zain-vazir](https://www.linkedin.com/in/muhammad-zain-vazir)")
+st.markdown("Kaggle![Kaggle](https://img.icons8.com/?size=30&id=1iP83OYM1FL-&format=png&color=000000)[mzainvazir](https://www.kaggle.com/mzainvazir)")
+st.markdown("Contact![Email](https://img.icons8.com/ios-glyphs/30/000000/email.png)[Email](mailto:zainvazir1@gmail.com)")
+st.markdown("---")
+
+
 if uploaded_file:
     file_details = {"FileName": uploaded_file.name, "FileType": uploaded_file.type, "FileSize": uploaded_file.size}
     st.write(file_details)
@@ -88,13 +98,6 @@ if uploaded_file:
     'nor', 'not', 'only', 'own', 'same', 'so', 'than', 'too', 'very', 
     's', 't', 'can', 'will', 'just', 'don', 'should', 'now']
 
-    # First Word Count Table (Including Custom Stopwords)
-    st.subheader("Word Count Table (All Words Included)")
-    word_count_incl_stopwords = pd.DataFrame({'Word': words}).groupby('Word').size().reset_index(name='Count').sort_values('Count', ascending=False)
-    st.write(word_count_incl_stopwords)
-
-    if st.button('Download All Word Count Table as CSV'):
-        st.markdown(get_table_download_link(word_count_incl_stopwords, "all_word_count.csv", "Click Here to Download"), unsafe_allow_html=True)
 
 
     # Sidebar: Checkbox and Multiselect box for stopwords
@@ -150,11 +153,11 @@ if uploaded_file:
         if st.button('Download Updated Word Count Table as CSV'):
             st.markdown(get_table_download_link(word_count_excl_stopwords, "word_count.csv", "Click Here to Download"), unsafe_allow_html=True)
 
+    # First Word Count Table (Including Custom Stopwords)
+    st.subheader("Word Count Table (All Words Included)")
+    word_count_incl_stopwords = pd.DataFrame({'Word': words}).groupby('Word').size().reset_index(name='Count').sort_values('Count', ascending=False)
+    st.write(word_count_incl_stopwords)
 
-    st.sidebar.markdown("---")
-    # add author name and info
-    st.sidebar.markdown("Created by: [Muhammad Zain Vazir](https://www.linkedin.com/in/muhammad-zain-vazir)")
-    st.sidebar.markdown("GitHub![GitHub](https://img.icons8.com/ios-glyphs/30/000000/github.png)[m-zainvazir](https://github.com/m-zainvazir)")
-    st.sidebar.markdown("LinkedIn![LinkedIn](https://img.icons8.com/ios-glyphs/30/000000/linkedin.png)[muhammad-zain-vazir](https://www.linkedin.com/in/muhammad-zain-vazir)")
-    st.sidebar.markdown("Kaggle![Kaggle](https://img.icons8.com/?size=30&id=1iP83OYM1FL-&format=png&color=000000)[mzainvazir](https://www.kaggle.com/mzainvazir)")
-    st.sidebar.markdown("Contact![Email](https://img.icons8.com/ios-glyphs/30/000000/email.png)[Email](mailto:zainvazir1@gmail.com)")
+    if st.button('Download All Word Count Table as CSV'):
+        st.markdown(get_table_download_link(word_count_incl_stopwords, "all_word_count.csv", "Click Here to Download"), unsafe_allow_html=True)
+
