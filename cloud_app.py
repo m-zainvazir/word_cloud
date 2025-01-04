@@ -89,7 +89,7 @@ if uploaded_file:
     's', 't', 'can', 'will', 'just', 'don', 'should', 'now']
 
     # First Word Count Table (Including Custom Stopwords)
-    st.subheader("Word Count Table, All Words Included")
+    st.subheader("Word Count Table (All Words Included)")
     word_count_incl_stopwords = pd.DataFrame({'Word': words}).groupby('Word').size().reset_index(name='Count').sort_values('Count', ascending=False)
     st.write(word_count_incl_stopwords)
 
@@ -138,17 +138,18 @@ if uploaded_file:
         
 
     # Second Word Count Table (Excluding Custom Stopwords)
-    st.subheader("Word Count Table, Excluding Stopwords (If selected any)")
-    all_stopwords = set(custom_stopwords).union(set(additional_stopwords))
-    filtered_text = filter_stopwords(text, all_stopwords)
-    words_filtered = filtered_text.split()
-    word_count_excl_stopwords = pd.DataFrame({'Word': words_filtered}).groupby('Word').size().reset_index(name='Count').sort_values('Count', ascending=False)
-    st.write(word_count_excl_stopwords)
+    if use_standard_stopwords or additional_stopwords:
+        st.subheader("Word Count Table (Excluding Stopwords)")
+        all_stopwords = set(custom_stopwords).union(set(additional_stopwords))
+        filtered_text = filter_stopwords(text, all_stopwords)
+        words_filtered = filtered_text.split()
+        word_count_excl_stopwords = pd.DataFrame({'Word': words_filtered}).groupby('Word').size().reset_index(name='Count').sort_values('Count', ascending=False)
+        st.write(word_count_excl_stopwords)
 
+        # Provide download link for table
+        if st.button('Download Updated Word Count Table as CSV'):
+            st.markdown(get_table_download_link(word_count_excl_stopwords, "word_count.csv", "Click Here to Download"), unsafe_allow_html=True)
 
-    # Provide download link for table
-    if st.button('Download Updated Word Count Table as CSV'):
-        st.markdown(get_table_download_link(word_count_excl_stopwords, "word_count.csv", "Click Here to Download"), unsafe_allow_html=True)
 
     st.sidebar.markdown("---")
     # add author name and info
@@ -157,5 +158,3 @@ if uploaded_file:
     st.sidebar.markdown("LinkedIn![LinkedIn](https://img.icons8.com/ios-glyphs/30/000000/linkedin.png)[muhammad-zain-vazir](https://www.linkedin.com/in/muhammad-zain-vazir)")
     st.sidebar.markdown("Kaggle![Kaggle](https://img.icons8.com/?size=30&id=1iP83OYM1FL-&format=png&color=000000)[mzainvazir](https://www.kaggle.com/mzainvazir)")
     st.sidebar.markdown("Contact![Email](https://img.icons8.com/ios-glyphs/30/000000/email.png)[Email](mailto:zainvazir1@gmail.com)")
-
-    
