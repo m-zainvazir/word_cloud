@@ -56,10 +56,10 @@ uploaded_file = st.file_uploader("Choose a file", type=["txt", "pdf", "docx"])
 # add author name and info
 st.markdown("---")
 st.markdown("Created by: [Muhammad Zain Vazir](https://www.linkedin.com/in/muhammad-zain-vazir)")
-st.markdown("GitHub![GitHub](https://img.icons8.com/ios-glyphs/30/000000/github.png)[m-zainvazir](https://github.com/m-zainvazir)")
-st.markdown("LinkedIn![LinkedIn](https://img.icons8.com/ios-glyphs/30/000000/linkedin.png)[m-zainvazir](https://www.linkedin.com/in/m-zainvazir)")
-st.markdown("Kaggle![Kaggle](https://img.icons8.com/?size=30&id=1iP83OYM1FL-&format=png&color=000000)[mzainvazir](https://www.kaggle.com/mzainvazir)")
-st.markdown("Contact![Email](https://img.icons8.com/ios-glyphs/30/000000/email.png)[Email](mailto:zainvazir1@gmail.com)")
+st.markdown("GitHub![GitHub](https://img.icons8.com/?size=25&id=106567&format=png&color=22C3E6)[m-zainvazir](https://github.com/m-zainvazir)")
+st.markdown("LinkedIn![LinkedIn](https://img.icons8.com/?size=25&id=13930&format=png&color=000000)[m-zainvazir](https://www.linkedin.com/in/m-zainvazir)")
+st.markdown("Kaggle![Kaggle](https://img.icons8.com/?size=20&id=Omk4fWoSmCHm&format=png&color=000000)[mzainvazir](https://www.kaggle.com/mzainvazir)")
+st.markdown("Contact![Email](https://img.icons8.com/?size=25&id=JeO1Kv9jsmLr&format=png&color=000000)[Email](mailto:zainvazir1@gmail.com)")
 st.markdown("---")
 
 
