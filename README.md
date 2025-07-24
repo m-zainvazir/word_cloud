@@ -8,11 +8,11 @@
 
 <!-- Centered image at 50% width -->
 <div style="text-align:center;">
-  <img src="https://i.ibb.co/zWcVWmNR/image.png" alt="Main Interface" style="width:50%; margin:0 auto; display:block;">
+  <a href="https://ibb.co/Q7Bv7JXN"><img src="https://i.ibb.co/zWcVWmNR/image.png" alt="Main Interface" style="width:50%; margin:0 auto;"></a>
 <!-- Side-by-side images at 45% width each -->
 <div style="display: flex; justify-content: space-between; margin: 20px 0;">
-  <img src="https://i.ibb.co/RT5z0GnH/image.png" alt="Example 1" width="45%">
-  <img src="https://i.ibb.co/kg5mPzvv/image.png" alt="Example 2" width="45%">
+  <a href="https://ibb.co/MDZBJKQQ"><img src="https://i.ibb.co/kg5mPzvv/image.png" alt="image" border="0" alt="Example 1" width="45%"></a>
+  <a href="https://ibb.co/s9BywpS3"><img src="https://i.ibb.co/RT5z0GnH/image.png" alt="image" border="0" alt="Example 2" width="45%"></a>
 </div>
 
 </div>
