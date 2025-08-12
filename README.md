@@ -41,20 +41,20 @@ streamlit run wordcloud_app.py
 
 ## 🎨 Customization Options
 
-| Parameter     | Options                                   | Default
-| ------------- | --------------------------------------- |
-| Width/Height  | 400-2000px                   | 800x400
-|Colormap | viridis, plasma, rainbow, etc. | viridis
-|Stopwords| Custom list + NLTK | Enabled
-|Background Color | Any HEX/RGB | #FFFFFF
+| Parameter        | Options                       | Component|
+| ---------------- | ----------------------------- | ---------|
+| Width/Height     | 400-2000px                    | 800x400  |
+| Colormap         | viridis, plasma, rainbow, etc.| viridis  |
+| Stopwords        | Custom list + NLTK            | Enabled  |
+| Background Color | Any HEX/RGB                   | #FFFFFF  |
 
 ## 📂 File Support
 
-| Format | Library Used | Notes
-| -
-| PDF | pdfplumber | Best for text-heavy
-| DOCX | python-docx | Preserves formatting
-| TXT | Native Python | Fastest processing
+| Format | Library Used | Notes |
+| ----| ------------ | ---- |
+| PDF | pdfplumber | Best for text-heavy |
+| DOCX | python-docx | Preserves formatting |
+| TXT | Native Python | Fastest processing |
 
 ## 🌍 Deployment
 
@@ -79,3 +79,4 @@ CMD ["streamlit", "run", "wordcloud_app.py"]
 ```
 ## 📜 License
 This project is licensed under the MIT License
+
